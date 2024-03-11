@@ -15,14 +15,14 @@ namespace PokeApi_Console
 
         [JsonPropertyName("name")]
         public string Nome { get; set; }
-
-        public List<Ability> Habilidades { get; set; }
+        [JsonPropertyName("abilities")]
+        public List<AbilityDetail> Habilidades { get; set; }
         
         public Pokemon()
         {
             Id = 0;
             Nome = string.Empty;
-            Habilidades = new List<Ability>();
+            Habilidades = new List<AbilityDetail>();
         }
 
     }

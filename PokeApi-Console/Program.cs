@@ -18,7 +18,11 @@ try
     // Json
     var pokemon = JsonSerializer.Deserialize<Pokemon>(response.Content);
 
-    Console.WriteLine($"Id: {pokemon.Id} Nome: {pokemon.Nome}");
+    Console.WriteLine($"Id: {pokemon.Id}");
+    Console.WriteLine($"Nome: {pokemon.Nome}");
+
+    foreach (var abilityDetail in pokemon.Habilidades )
+        Console.WriteLine(abilityDetail.Ability.Name);
 }
 catch (Exception ex)
 {
